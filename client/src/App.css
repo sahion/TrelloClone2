@@ -1,12 +1,26 @@
+html{
+  font-size:10px;
+}
+
+  a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+li {
+  list-style-type: none!important;
 }
 
 body {
-  font-size: 1rem;
+  font-size: 1.8rem;
   background-color: #eee;
   color: #333;
 }
@@ -36,17 +50,38 @@ body {
 
 .landing {
   height: 100vh;
-  color: white;
   text-align: center;
-  background: linear-gradient(135deg, #0079bf, #5067c5);
+  max-width: 1190px;
+  margin: 0 auto;
 }
 
-.landing .top {
+.landing .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items:center;
   padding: 20px;
 }
+
+.header__navigation{
+  display:flex;
+  gap: 60px;
+}
+
+.text_orange{
+  color: #E47A3D;
+}
+
+.btn_outline{
+  border: 1px solid #E47A3D;
+  color:#E47A3D;
+  padding:16px;
+  border-radius:8px;  
+  font-weight: 800px;
+  font-size:1.6rem;
+  margin-top: -16px;
+}
+
 
 .landing .landing-inner {
   align-items: center;

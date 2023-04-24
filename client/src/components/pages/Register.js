@@ -27,7 +27,7 @@ const Register = () => {
     password: '',
     password2: '',
   });
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  let isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
 
   useEffect(() => {

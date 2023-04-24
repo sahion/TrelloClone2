@@ -16,16 +16,17 @@ const Landing = () => {
 
   return (
     <section className='landing'>
-      <nav className='top'>
-        <h2>TrelloClone</h2>
-        <div>
-          <Button color='inherit' href='/login'>
-            Login
-          </Button>
-          <Button variant='contained' href='/register'>
-            Sign Up
-          </Button>
-        </div>
+      <nav className='header'>
+        <h2><img src="logo.png" alt="" /></h2>
+        <nav className=''>
+        <ul className="header__navigation">
+            <li><a href="#">Часто задаваемые вопросы</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li className='text_orange'><a href="#">Проверить статус заявки</a></li>
+            <li><a href="#" className="btn_outline">Связаться</a></li>
+          </ul>
+ 
+        </nav>
       </nav>
       <div className='landing-inner'>
         <h1>TrelloClone</h1>
