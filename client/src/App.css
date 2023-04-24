@@ -21,8 +21,7 @@ li {
 
 body {
   font-size: 1.8rem;
-  background-color: #eee;
-  color: #333;
+  color: #363636;
 }
 
 .copyright {
@@ -60,10 +59,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
-  padding: 20px;
+  padding: 20px 0;
 }
 
-.header__navigation{
+
+
+  .header__navigation{
   display:flex;
   gap: 60px;
 }
@@ -72,7 +73,7 @@ body {
   color: #E47A3D;
 }
 
-.btn_outline{
+.btn{
   border: 1px solid #E47A3D;
   color:#E47A3D;
   padding:16px;
@@ -80,6 +81,11 @@ body {
   font-weight: 800px;
   font-size:1.6rem;
   margin-top: -16px;
+}
+
+.btn_inner{
+  color: white;
+  background-color: #E47A3D;
 }
 
 
@@ -91,8 +97,8 @@ body {
 }
 
 .landing h1 {
-  font-size: 5rem;
-  margin-bottom: 20px;
+  font-size:0px;
+  margin:0;
 }
 
 .landing p {
@@ -108,6 +114,22 @@ body {
 
 .landing p a:hover {
   color: darkgrey;
+}
+
+
+.section1{
+  display:flex;
+  text-align:left;
+  margin-top:60px;
+}
+
+.section1 h2{
+  font-weight: 700;
+  font-size:6.6rem;
+}
+
+.section1__header{
+  margin-bottom:48px;
 }
 
 @media (max-width: 700px) {
@@ -126,6 +148,8 @@ body {
   align-items: center;
   padding: 50px;
 }
+
+
 
 .dashboard h1 {
   text-align: center;

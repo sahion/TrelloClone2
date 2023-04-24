@@ -17,28 +17,27 @@ const Landing = () => {
   return (
     <section className='landing'>
       <nav className='header'>
-        <h2><img src="logo.png" alt="" /></h2>
+        <img src="logo.png" alt="logo" /><h1>MaxBonus</h1>
         <nav className=''>
         <ul className="header__navigation">
             <li><a href="#">Часто задаваемые вопросы</a></li>
             <li><a href="#">Контакты</a></li>
             <li className='text_orange'><a href="#">Проверить статус заявки</a></li>
-            <li><a href="#" className="btn_outline">Связаться</a></li>
+            <li><a href="#" className="btn">Связаться</a></li>
           </ul>
  
         </nav>
       </nav>
-      <div className='landing-inner'>
-        <h1>TrelloClone</h1>
-        <p>
-          Just like <a href='https://trello.com/'>Trello</a>, but made by just one guy!
-        </p>
-        <div className='buttons'>
-          <Button variant='outlined' color='inherit' href='/register'>
-            Sign Up
-          </Button>
+      <div className='landing__section1 section1'>
+        <div className="section1__left">
+          <h2 className= "section1__header">Платформа лояльности и управления потребительским опытом</h2>
+          <a href="#" className="btn btn_inner section1__btn">Оставить заявку</a>
         </div>
+        <div className="section1__right">
+        <img src="phone_example.png" alt="phone example" />
       </div>
+      </div>
+      
     </section>
   );
 };
