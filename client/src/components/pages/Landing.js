@@ -63,6 +63,19 @@ const Landing = () => {
             </div>
           </div>
       </div>
+      <div className='landing__section3 section '>
+          <h2 className= "section3__header headline email">igorигорь@gmail.com</h2>
+          <div className="employee">
+          <img src="./assets/igor.png" alt="avatar" className="employee__avatar" />
+            <div className="employee__info">
+            
+              <div className="employee__important">Игорь Игорь</div>
+              <div className="employee__status">старший отдел помощи</div>
+            </div>
+            <div className="employee__important">+7 (999) 999-99-99</div>
+            <div className="employee__important">telegram Игоря</div>
+          </div>
+      </div>
       
     </section>
   );
