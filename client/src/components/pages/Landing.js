@@ -28,14 +28,40 @@ const Landing = () => {
  
         </nav>
       </nav>
-      <div className='landing__section1 section1'>
+      <div className='landing__section1 section '>
         <div className="section1__left">
-          <h2 className= "section1__header">Платформа лояльности и управления потребительским опытом</h2>
+          <h2 className= "section1__header headline">Платформа лояльности и управления потребительским опытом</h2>
           <a href="#" className="btn btn_inner section1__btn">Оставить заявку</a>
         </div>
         <div className="section1__right">
         <img src="phone_example.png" alt="phone example" />
       </div>
+      </div>
+
+      <div className='landing__section2 section '>
+          <h2 className= "section2__header headline">Часто задаваемые вопросы</h2>
+          <div className="questions">
+            <div className="quest">
+              <div className="quest__text">Вопрос</div>
+              <div className="quest__icon"></div>
+            </div>
+            <div className="quest">
+              <div className="quest__text">Вопрос</div>
+              <div className="quest__icon"></div>
+            </div>
+            <div className="quest">
+              <div className="quest__text">Вопрос</div>
+              <div className="quest__icon"></div>
+            </div>
+            <div className="quest">
+              <div className="quest__text">Вопрос</div>
+              <div className="quest__icon quest__icon_active"></div>
+            </div>
+            <div className="quest">
+              <div className="quest__text">Вопрос</div>
+              <div className="quest__icon"></div>
+            </div>
+          </div>
       </div>
       
     </section>
