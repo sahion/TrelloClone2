@@ -48,7 +48,6 @@ body {
 }
 
 .landing {
-  height: 100vh;
   text-align: center;
   max-width: 1190px;
   margin: 0 auto;
@@ -250,6 +249,31 @@ font-size:66px;
 
 .employee__important{
   font-size:2.4rem;
+}
+
+.footer{
+  margin-top: 84px;
+  max-width:100%;
+  background-color: black;
+  height:134px;
+  border-radius: 64px 64px 0px 0px;
+}
+
+.footer__info{
+  text-align: center;
+  max-width: 1190px;
+  margin: 0 auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height:134px;
+
+}
+
+.footer__copyright{
+font-weight: 400;
+font-size: 1.6rem;
+color:white;
 }
 
 .dashboard h2 {

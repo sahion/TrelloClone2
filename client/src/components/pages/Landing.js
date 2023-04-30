@@ -15,6 +15,7 @@ const Landing = () => {
   }
 
   return (
+    <div>
     <section className='landing'>
       <nav className='header'>
         <img src="logo.png" alt="logo" /><h1>MaxBonus</h1>
@@ -78,6 +79,15 @@ const Landing = () => {
       </div>
       
     </section>
+    <footer className='footer'>
+      <div className="footer__info">
+      <img src="logo.png" alt="logo" />
+      <div className="footer__copyright">
+      © Все права защищены
+      </div>
+      </div>
+    </footer>
+    </div>
   );
 };
 
