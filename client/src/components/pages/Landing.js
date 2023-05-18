@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import NewRequestModal from '../landing/NewRequestModal';
 import CheckStatusModal from '../landing/CheckStatusModal';
+import Questions from '../landing/Questions';
+
 const Landing = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
@@ -13,6 +15,7 @@ const Landing = () => {
     document.title = 'MaxBonus';
   }, []);
 
+  const [question1,setQuestion1] = useState(false);
 
   return (
     <div>
@@ -42,29 +45,13 @@ const Landing = () => {
 
       <div className='landing__section2 section '>
           <h2 className= "section2__header headline" id="freq_questions">Часто задаваемые вопросы</h2>
-          <div className="questions">
-            <div className="quest">
-              <div className="quest__text">Вопрос</div>
-              <div className="quest__icon"></div>
-            </div>
-            <div className="quest">
-              <div className="quest__text">Вопрос</div>
-              <div className="quest__icon"></div>
-            </div>
-            <div className="quest">
-              <div className="quest__text">Вопрос</div>
-              <div className="quest__icon"></div>
-            </div>
-            <div className="quest">
-              <div className="quest__text">Вопрос</div>
-              <div className="quest__icon quest__icon_active"></div>
-            </div>
-            <div className="quest">
-              <div className="quest__text">Вопрос</div>
-              <div className="quest__icon"></div>
-            </div>
-          </div>
+          <Questions questions={[['Вопрос1','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget consectetur augue. Donec suscipit ex a est fermentum, eget aliquam tortor ullamcorper. Nulla tempor nibh vel commodo lobortis. Duis commodo neque quis tortor porta, ut dictum lorem faucibus. Quisque euismod lacus vitae odio malesuada interdum. Sed interdum, mi fringilla varius mollis, neque dui commodo purus, ac volutpat eros est ut lacus. Aliquam aliquet massa quis ex auctor, in finibus sem pellentesque. Donec posuere metus et metus viverra eleifend. Aliquam erat volutpat. Sed finibus lorem a nisl ullamcorper molestie.'],
+          ['Вопрос2','Ответ2'],
+          ['Вопрос3','Ответ3'],
+          ['Вопрос4','Ответ4'],
+          ['Вопрос5','Ответ5']]}/>
       </div>
+
       <div className='landing__section3 section' id="contacts">
           <h2 className= "section3__header headline email">igorигорь@gmail.com</h2>
           <div className="employee">

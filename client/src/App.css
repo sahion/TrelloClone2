@@ -142,12 +142,37 @@ font-size:66px;
 }
 
 .quest{
+  padding:20px 30px;
+  background: #F0F3F5; 
+  cursor: pointer;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+}
+
+.questQuestion{
   display:flex;
   justify-content:space-between;
-  padding: 20px 30px;
   background: #F0F3F5;
-  margin-bottom:20px; 
   cursor: pointer;
+  z-index:1;
+ 
+}
+
+.questAnswer{
+  margin-top:20px;
+  font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #737373;
+transition: all  0.5s linear;
+max-height:800px;
+}
+
+.questAnswerClosed{ 
+max-height:0;
+overflow: hidden;
+margin-top:0px;
 }
 
 .quest__icon{
@@ -158,6 +183,7 @@ font-size:66px;
   display:flex;
   justify-content: center;
   align-items:center;
+  transition: all 0.5s linear;
 }
 
 .quest__icon::before{
