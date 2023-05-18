@@ -34,7 +34,8 @@ const App = () => {
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/board/:id' component={Board} />
+            <Route exact path='/board/' component={Board} />
+            
           </Switch>
         </Fragment>
       </Router>

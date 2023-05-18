@@ -24,7 +24,7 @@ const BoardDrawer = () => {
   const [viewingArchivedLists, setViewingArchivedLists] = useState(false);
   const [viewingArchivedCards, setViewingArchivedCards] = useState(false);
   const [activityChunks, setActivityChunks] = useState(1);
-  const activity = useSelector((state) => state.board.board.activity);
+  const activity = useSelector((state) => state?.board?.board?.  activity);
 
   const handleClose = () => {
     setOpen(false);

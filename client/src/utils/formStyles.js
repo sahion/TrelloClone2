@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
     maxWidth: '100vw',
     padding: '20px',
-    background: 'linear-gradient(135deg, #0079bf, #5067c5)',
+    background: 'linear-gradient(135deg, #E47A3D, #363636)',
   },
   paper: {
     marginTop: theme.spacing(8),

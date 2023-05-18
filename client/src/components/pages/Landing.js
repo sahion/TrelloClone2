@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import NewRequestModal from '../landing/NewRequestModal';
+import CheckStatusModal from '../landing/CheckStatusModal';
 const Landing = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
+  const [openNewRequestModal, setOpenRequestModal] = useState(false);
+  const [openCheckStatusModal, setCheckStatusModal] = useState(false);
   useEffect(() => {
-    document.title = 'TrelloClone';
+    document.title = 'MaxBonus';
   }, []);
 
-  if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
-  }
 
   return (
     <div>
@@ -21,9 +21,9 @@ const Landing = () => {
         <img src="logo.png" alt="logo" /><h1>MaxBonus</h1>
         <nav className=''>
         <ul className="header__navigation">
-            <li><a href="#">Часто задаваемые вопросы</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li className='text_orange'><a href="#">Проверить статус заявки</a></li>
+            <li><a href="#freq_questions">Часто задаваемые вопросы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <li className='text_orange'><a href='#' className='pointer' onClick={() => setCheckStatusModal(true)}>Проверить статус заявки</a></li>
             <li><a href="#" className="btn">Связаться</a></li>
           </ul>
  
@@ -32,15 +32,16 @@ const Landing = () => {
       <div className='landing__section1 section '>
         <div className="section1__left">
           <h2 className= "section1__header headline">Платформа лояльности и управления потребительским опытом</h2>
-          <a href="#" className="btn btn_inner section1__btn">Оставить заявку</a>
+          <button onClick={() => setOpenRequestModal(true)} className="btn btn_inner section1__btn">Оставить заявку</button>
         </div>
+        
         <div className="section1__right">
         <img src="phone_example.png" alt="phone example" />
       </div>
       </div>
 
       <div className='landing__section2 section '>
-          <h2 className= "section2__header headline">Часто задаваемые вопросы</h2>
+          <h2 className= "section2__header headline" id="freq_questions">Часто задаваемые вопросы</h2>
           <div className="questions">
             <div className="quest">
               <div className="quest__text">Вопрос</div>
@@ -64,7 +65,7 @@ const Landing = () => {
             </div>
           </div>
       </div>
-      <div className='landing__section3 section '>
+      <div className='landing__section3 section' id="contacts">
           <h2 className= "section3__header headline email">igorигорь@gmail.com</h2>
           <div className="employee">
           <img src="./assets/igor.png" alt="avatar" className="employee__avatar" />
@@ -87,7 +88,10 @@ const Landing = () => {
       </div>
       </div>
     </footer>
+    <NewRequestModal open={openNewRequestModal} onClose={(e)=>  {if (e.target.className === 'overlay' || e.target.className =='closeRequest')setOpenRequestModal(false)}}/>
+    <CheckStatusModal open={openCheckStatusModal} onClose={(e)=> {if (e.target.className === 'overlay' || e.target.className =='closeRequest')setCheckStatusModal(false)}}/>
     </div>
+    
   );
 };
 

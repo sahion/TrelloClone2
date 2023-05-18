@@ -43,12 +43,12 @@ const Board = () => {
 
 
   const onDrop = (item, monitor, status) => {
-    const mapping = statuses.find(si => si.idStatus === status.idStatus);
+    const mapping = statuses.find(si => si.status === status);
 
     setItems(prevState => {
         const newItems = prevState
             .filter(i => i.id !== item.id)
-            .concat({ ...item, status});
+            .concat({ ...item, status, icon: mapping.icon });
         return [ ...newItems ];
     });
 };
@@ -65,7 +65,7 @@ const moveItem = (dragIndex, hoverIndex) => {
 
 
     return (  
-      <DndProvider backend={HTML5Backend} style={styles}>
+      <DndProvider backend={HTML5Backend}>
         <div className={"row"}>
         {statuses.map(s => {
                 return (

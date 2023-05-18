@@ -21,7 +21,7 @@ const Dashboard = () => {
   }, []);
 
   if (!isAuthenticated) {
-    return <Redirect to='/' />;
+    return <Redirect to='/login' />;
   }
 
   return (

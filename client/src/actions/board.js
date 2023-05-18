@@ -33,6 +33,23 @@ const config = {
   },
 };
 
+export const getTasks = async () => {
+  axios
+  .get('https://help-maxbonus.ru/api/status')
+  .then(data => {
+    return data;
+  })
+}
+
+export const getStatuses = async () => {
+    axios
+    .get('https://help-maxbonus.ru/api/status')
+    .then(data => {
+      return data;
+  });
+}
+
+
 // Get boards
 export const getBoards = () => async (dispatch) => {
   try {
@@ -194,7 +211,7 @@ export const archiveList = (listId, archive) => async (dispatch) => {
 // Get card
 export const getCard = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/cards/${id}`);
+    const res = await axios.get(`/api/task/${id}`);
 
     dispatch({
       type: GET_CARD,
@@ -213,7 +230,7 @@ export const addCard = (formData) => async (dispatch) => {
   try {
     const body = JSON.stringify(formData);
 
-    const res = await axios.post('/api/cards', body, config);
+    const res = await axios.post('/api/tasj', body, config);
 
     dispatch({
       type: ADD_CARD,
@@ -232,7 +249,7 @@ export const addCard = (formData) => async (dispatch) => {
 // Edit card
 export const editCard = (cardId, formData) => async (dispatch) => {
   try {
-    const res = await axios.patch(`/api/cards/edit/${cardId}`, formData, config);
+    const res = await axios.patch(`/api/task/${cardId}`, formData, config);
 
     dispatch({
       type: EDIT_CARD,
@@ -251,7 +268,7 @@ export const moveCard = (cardId, formData) => async (dispatch) => {
   try {
     const body = JSON.stringify(formData);
 
-    const res = await axios.patch(`/api/cards/move/${cardId}`, body, config);
+    const res = await axios.patch(`/api/task/${cardId}`, body, config);
 
     dispatch({
       type: MOVE_CARD,
@@ -456,3 +473,4 @@ export const deleteChecklistItem = (cardId, itemId) => async (dispatch) => {
     });
   }
 };
+

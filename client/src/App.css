@@ -593,3 +593,98 @@ color:white;
 .board .lists .list-wrapper .list .cards .mouse-over {
   background-color: whitesmoke;
 }
+
+
+.newRequestModal, .checkStatusModal{
+  background:white;
+  margin: auto;
+  width:365px;
+  border-radius: 16px;
+  z-index: 2000;
+}
+
+.overlay{
+  background-color: rgba(0,0,0,0.5);
+  left: 0; right: 0; top: 0; bottom: 0;
+  position: absolute;
+  z-index: 999;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.headerRequestModal{
+  padding:24px;
+  display:flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #F0F3F5;
+}
+
+.requestHeader{
+  font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+color:#363636;
+}
+
+
+
+.closeRequest{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.closeRequest::before{
+  background:#363636; 
+  transform: rotate(45deg);
+  position:absolute;
+  
+  height:2px;
+  width:24px;
+  content: "";
+  
+}
+.closeRequest::after{
+  background:#363636; 
+  transform: rotate(45deg);
+  position:absolute; 
+  height:24px;
+  width:2px;
+  content: "";
+}
+
+.requestInputs{
+  display:flex;
+  flex-direction: column;
+  gap:16px;
+  margin:24px 24px;
+}
+
+.requestInput{
+  background: #F0F3F5;
+border-radius: 8px ;
+border: 0px;
+height:44px;
+color:#737373;
+padding:10px;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+}
+
+.requestBtn{
+  margin-top:24px;
+  padding:10px;
+}
+
+.requestInput_description{
+  height:100px;
+}
+
+.pointer{
+  
+}

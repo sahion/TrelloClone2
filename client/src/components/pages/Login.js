@@ -21,13 +21,13 @@ const Login = () => {
   const classes = useStyles();
 
   const [formData, setFormData] = useState({
-    email: '',
+    name: '',
     password: '',
   });
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
 
-  const { email, password } = formData;
+  const { name, password } = formData;
 
   useEffect(() => {
     document.title = 'TrelloClone | Sign In';
@@ -37,11 +37,11 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
+    dispatch(login(name, password));
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/board' />;
   }
 
   return (
@@ -49,7 +49,7 @@ const Login = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-          TrelloClone
+          MaxBonus
         </Typography>
         <Typography component='h1' variant='h5'>
           Sign in
@@ -60,11 +60,11 @@ const Login = () => {
             margin='normal'
             required
             fullWidth
-            label='Email Address'
-            name='email'
-            autoComplete='email'
+            label='login'
+            name='name'   
+            autoComplete='login'
             autoFocus
-            value={email}
+            value={name}
             onChange={(e) => onChange(e)}
           />
           <TextField
@@ -83,18 +83,10 @@ const Login = () => {
             type='submit'
             fullWidth
             variant='contained'
-            color='primary'
             className={classes.submit}
           >
             Sign In
           </Button>
-          <Grid container justify='flex-end'>
-            <Grid item>
-              <Link href='/register' variant='body2'>
-                Don't have an account? Sign Up
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
       <Box mt={8}>

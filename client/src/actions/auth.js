@@ -18,7 +18,7 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get('/api/auth');
+    const res = await axios.get('https://help-maxbonus.ru/api/task');
 
     dispatch({
       type: USER_LOADED,
@@ -64,26 +64,27 @@ export const register = ({ name, email, password }) => async (dispatch) => {
 };
 
 // Login User
-export const login = (email, password) => async (dispatch) => {
+export const login = (username, password) => async (dispatch) => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
     },
   };
 
-  const body = JSON.stringify({ email, password });
+  let login = username;
+  const body = JSON.stringify({ login, password });
 
   try {
-    const res = await axios.post('/api/auth', body, config);
+    const res = await axios.post('https://help-maxbonus.ru/api/status', body, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
-
+    localStorage.token = res.data.split(" ")[1];
     dispatch(loadUser());
   } catch (err) {
-    const errors = err.response.data.errors;
+    const errors = err?.response?.data?.errors;
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'error')));
