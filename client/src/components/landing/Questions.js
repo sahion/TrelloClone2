@@ -8,7 +8,7 @@ const Questions = ({questions}) => {
   return(
 <div className="questions">
             {questions.map(q => 
-            <Question  open={false} quest={q[0]} answer={q[1]}/>
+            <Question key={q[0]}  open={false} quest={q[0]} answer={q[1]}/>
             )}
     
           </div>

@@ -71,11 +71,7 @@ const Item = ({item, index, moveItem, status}) => {
         <p className = {"item-company"}><b>Компания: </b>{item.company_name}</p>
         <p className = {"item-problem"}><b>Комментарий: </b>{item.comment}</p>
       </div>
-      <Window
-      item = {item}
-      onClose={onClose}
-      show={show}
-      />
+
     </Fragment>
   )
 }

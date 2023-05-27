@@ -27,7 +27,7 @@ const Landing = () => {
             <li><a href="#freq_questions">Часто задаваемые вопросы</a></li>
             <li><a href="#contacts">Контакты</a></li>
             <li className='text_orange'><a href='#' className='pointer' onClick={() => setCheckStatusModal(true)}>Проверить статус заявки</a></li>
-            <li><a href="#" className="btn">Связаться</a></li>
+            <li><a href="#contacts" className="btn">Связаться</a></li>
           </ul>
  
         </nav>
@@ -35,7 +35,7 @@ const Landing = () => {
       <div className='landing__section1 section '>
         <div className="section1__left">
           <h2 className= "section1__header headline">Платформа лояльности и управления потребительским опытом</h2>
-          <button onClick={() => setOpenRequestModal(true)} className="btn btn_inner section1__btn">Оставить заявку</button>
+          <button onClick={() => setOpenRequestModal(true)} className="btn btn_inner section1__btn pointer">Оставить заявку</button>
         </div>
         
         <div className="section1__right">
@@ -75,8 +75,8 @@ const Landing = () => {
       </div>
       </div>
     </footer>
-    <NewRequestModal open={openNewRequestModal} onClose={(e)=>  {if (e.target.className === 'overlay' || e.target.className =='closeRequest')setOpenRequestModal(false)}}/>
-    <CheckStatusModal open={openCheckStatusModal} onClose={(e)=> {if (e.target.className === 'overlay' || e.target.className =='closeRequest')setCheckStatusModal(false)}}/>
+    <NewRequestModal open={openNewRequestModal} onClose={(e)=>  {if (e.target.className === 'overlay' || e.target.className =='closeRequest'){setOpenRequestModal(false); document.body.style.overflow='visible';}}}/>
+    <CheckStatusModal open={openCheckStatusModal} onClose={(e)=> {if (e.target.className === 'overlay' || e.target.className =='closeRequest'){setCheckStatusModal(false); document.body.style.overflow='visible';}}}/>
     </div>
     
   );

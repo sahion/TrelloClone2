@@ -11,18 +11,18 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 const Board = () => {
 
 
-
+  console.log(document.classList);
 
 
   const [statuses, setStatus] = useState([]);
   useEffect(()=>{
-    let isActive = true;
+
     axios
     .get("https://help-maxbonus.ru/api/status")
     .then(data =>{
-      if (isActive) setStatus(data?.data?.statuses);
+       setStatus(data?.data?.statuses);
     });
-    return () => { isActive = false };
+    ;
   })
   
   const [items, setItems] = useState([]);
@@ -65,16 +65,17 @@ const moveItem = (dragIndex, hoverIndex) => {
 
 
     return (  
-      <DndProvider backend={HTML5Backend} style={styles}>
+      
+      <DndProvider backend={HTML5Backend} >
         <div className={"row"}>
         {statuses.map(s => {
                 return (
-                    //`status${s.idStatus}`
+                    
                     <div key={`status${s.idStatus}`} className={"col-wrapper"}>
                         <h2 className={"col-header"}>{s.nameStatus.toUpperCase()}</h2>
                         <DropWrapper onDrop={onDrop} status={s.nameStatus}>
                             <Col>
-                                {items
+                            {items
                                     .filter(i => i.id_status === s.idStatus)
                                     .map((i, idx) => <Item key={i.id} item={i} index={idx} moveItem={moveItem} status={s} />)
                                 }
