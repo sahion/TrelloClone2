@@ -39,7 +39,7 @@ export const getStatusRequest = async  (task_id, statuses) =>  {
 
         let status = statuses.find(s => data.task_info.id_status = s.idStatus)
         alert(`Статус вашей заявки: ${status.nameStatus}`);
-        return true;
+        location.reload();
       } else {
         alert(`Такой заявки не существует`)
       }
