@@ -11582,6 +11582,18 @@
   dependencies:
     "punycode" "^2.1.1"
 
+"trelloclone@file:..":
+  "resolved" "file:.."
+  "version" "1.0.0"
+  dependencies:
+    "bcryptjs" "^2.4.3"
+    "dotenv" "^8.2.0"
+    "express" "^4.17.1"
+    "express-validator" "^6.9.2"
+    "gravatar" "^1.8.1"
+    "jsonwebtoken" "^8.5.1"
+    "mongoose" "^5.11.16"
+
 "tryer@^1.0.1":
   "integrity" "sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA=="
   "resolved" "https://registry.npmjs.org/tryer/-/tryer-1.0.1.tgz"
